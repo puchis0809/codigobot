@@ -1,0 +1,15 @@
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        
+        return
+    if message.content.startswith('$hello'):
+        await message.channel.send(f'Hola, soy el bot este es la lista dr mis comandos {client.user}!')
+
+    if message.content.startswith('$dado'):
+        await message.channel.send(random.randint(1,60))
+
+    else:
+        await message.channel.send("No puedo procesar este comando, ¡lo siento!")
+
+client.run("token lo pone aqui")
